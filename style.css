@@ -121,9 +121,27 @@ a,
 }
 
 /* HAMBURGER MENU - MOBILE */
+.navbar .nav-links {
+    display: flex;
+  }
 #hamburger-nav {
-  display: none;
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 2000;
 }
+.menu-links {
+    display: none;
+    flex-direction: column;
+    background-color: #222;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 10px;
+    padding: 1rem;
+    z-index: 999;
+  }
 
 .hamburger-menu {
   position: relative;
@@ -146,22 +164,13 @@ a,
   transition: all 0.3 ease-in-out;
 }
 
-.menu-links {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3 ease-in-out;
-}
+
 
 .menu-links a {
   display: block;
   padding: 10px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: black;
   text-decoration: none;
   transition: all 0.3 ease-in-out;
@@ -169,6 +178,7 @@ a,
 
 .menu-links li {
   list-style: none;
+  margin: 0.5rem 0;
 }
 
 .menu-links.open {
@@ -200,7 +210,7 @@ a,
 }
 /* MOBILE MENU */
 .menu-links {
-  display: none;
+  display: flex;
   position: absolute;
   top: 60px;
   right: 0;
@@ -226,7 +236,6 @@ a,
   padding: 10px;
   text-align: center;
 }
-
 .menu-links a {
   text-decoration: none;
   color: white;
@@ -242,8 +251,11 @@ a,
 
 /* RESPONSIVE NAVBAR */
 @media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
+  .navebar .nav-links {
+    display: flex;
+  }
+  #hamburger-nav {
+    display: flex;
   }
 
   .hamburger-icon {
@@ -326,26 +338,6 @@ section {
   box-shadow: 0 0 15px px rgba(255, 102, 45, 0.7);
 }
 
-/* Tablet View */
-@media screen and (max-width: 1024px) {
-  .section__pic-container img[src="./assets/profile-pic.png"] {
-    max-width: 300px;
-  }
-}
-
-/* Mobile View */
-@media screen and (max-width: 768px) {
-  .section__pic-container img[src="./assets/profile-pic.png"] {
-    max-width: 250px;
-  }
-}
-
-/* Small Mobile View */
-@media screen and (max-width: 480px) {
-  .section__pic-container img[src="./assets/profile-pic.png"] {
-    max-width: 200px;
-  }
-}
 
 /* ICONS */
 
@@ -560,10 +552,3 @@ footer p {
   text-align: center;
 }
 
-/* Add circular shape and glowing shadow effect to profile-pic.png */
-.section__pic-container img[src="./assets/profile-pic.png"] {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%; /* Makes the image circular */
-  box-shadow: 0 0 15px 5px rgba(255, 102, 45, 0.7); /* Orange glow effect */
-}
