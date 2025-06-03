@@ -552,3 +552,137 @@ footer p {
     text-align: center;
   }
 }
+
+.container {
+  display: flex;
+  justify-content: flex-end; /* pushes content to right */
+  align-items: center;        /* vertical center */
+}
+
+/* Contact Section */
+.white-theme {
+  background-color: #ffffff;
+  color: #111;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.contact-form-wrapper {
+  max-width: 500px;
+  width: 100%;
+  background: #f7f7f7;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
+  padding: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-box {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.input-box i {
+  margin-right: 0.7rem;
+  color: #ff6600;
+}
+
+.input-box input,
+.input-box textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.btn-glow {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 12px #ff6600;
+}
+/* footer */
+/* Footer Styling */
+.updated-footer {
+  background-color: #fdfdfd;
+  border-top: 3px solid #ff6600;
+  padding: 2rem 1rem 1rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-box h3,
+.footer-box h4 {
+  color: #ff6600;
+  margin-bottom: 0.6rem;
+}
+
+.footer-box p,
+.footer-box a {
+  font-size: 0.95rem;
+  color: #111;
+  text-decoration: none;
+}
+
+.footer-box a:hover {
+  text-decoration: underline;
+  color: #ff6600;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-box li {
+  margin: 0.4rem 0;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: #888;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
