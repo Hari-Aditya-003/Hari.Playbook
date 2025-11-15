@@ -9,11 +9,131 @@
     <link rel="stylesheet" href="mediaqueries.css" />
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
+    <!-- ====== CLEAN NAVBAR STYLE ====== -->
+    <style>
+      /* ====== NAVBAR BASE ====== */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(17, 17, 17, 0.85);
+        backdrop-filter: blur(8px);
+        padding: 0.8rem 1.5rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #f39c12;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin-right: 1rem;
+      }
+
+      .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links li a:hover,
+      .nav-links li a.active {
+        color: #00bfff;
+      }
+
+      /* ====== HAMBURGER MENU ====== */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .hamburger span {
+        height: 3px;
+        width: 26px;
+        background: white;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      /* ====== MOBILE VIEW ====== */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 70px;
+          right: 10px;
+          background: rgba(17, 17, 17, 0.95);
+          flex-direction: column;
+          align-items: flex-start;
+          width: 200px;
+          border-radius: 10px;
+          padding: 1rem;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          height: 0;
+          overflow: hidden;
+          transition: all 0.4s ease;
+        }
+
+        .nav-links.open {
+          height: auto;
+        }
+
+        .nav-links li {
+          width: 100%;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links li:last-child {
+          border-bottom: none;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translateY(8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translateY(-8px);
+        }
+      }
+    </style>
   </head>
+
   <body>
+    <!-- ✅ CLEAN, MODERN RESPONSIVE NAVBAR -->
     <nav class="navbar">
       <div class="logo">Hari's Playbook</div>
-      <ul class="nav-links" id="desktop-nav">
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
         <li><a href="#" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -21,8 +141,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    
-    
+
+    <!-- ====== PROFILE SECTION ====== -->
     <section id="profile">
       <div class="section__pic-container">
         <img src="./assets/profile-pic.png" alt="Hari Aditya profile picture" />
@@ -30,7 +150,9 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Hari Aditya</h1>
-        <p class="section__text__p2"> Full-Stack Web Developer | Game Developer | ML & Data Science Enthusiast</p>
+        <p class="section__text__p2">
+          Full-Stack Web Developer | Game Developer | ML & Data Science Enthusiast
+        </p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -58,91 +180,66 @@
         </div>
       </div>
     </section>
-    
+
+    <!-- ====== ABOUT SECTION ====== -->
     <section id="about">
-  <p class="section__text__p1">Get To Know More</p>
-  <h1 class="title">About Me</h1>
-  <div class="section-container">
-    <div class="section__pic-container">
-      <img
-        src="./assets/about-pic.png"
-        alt="Profile picture"
-        class="about-pic"
-      />
-    </div>
-    <div class="about-details-container">
-      <div class="about-containers">
-        <!-- EXPERIENCE SECTION -->
-        <div class="details-container">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
           <img
-            src="./assets/experience.png"
-            alt="Experience icon"
-            class="icon"
+            src="./assets/about-pic.png"
+            alt="Profile picture"
+            class="about-pic"
           />
-          <h3>Experience</h3>
-          <p>
-            <strong>Software Dev Engineer</strong> – GALLEGA Software Solutions<br />
-            <em>Jan 2025 – Mar 2025</em><br />
-            AI-powered stock prediction with Flask, LSTM, ARIMA.<br /><br />
-
-            <strong>Game Developer Intern</strong> – GoLive Games<br />
-            <em>Sept 2024 – Nov 2024</em><br />
-            Developed 2D educational games in Unity (C#).<br /><br />
-
-            <strong>Game Dev Intern</strong> – CEMS<br />
-            <em>May 2024 – Jul 2024</em><br />
-            Created 3D maritime simulations using Unity & Twinmotion.
-          </p>
         </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" alt="Experience" class="icon" />
+              <h3>Experience</h3>
+              <p>
+                <strong>Software Dev Engineer</strong> – GALLEGA Software Solutions<br />
+                <em>Jan 2025 – Mar 2025</em><br />
+                AI-powered stock prediction with Flask, LSTM, ARIMA.<br /><br />
+                <strong>Game Developer Intern</strong> – GoLive Games<br />
+                <em>Sept 2024 – Nov 2024</em><br />
+                Developed 2D educational games in Unity (C#).<br /><br />
+                <strong>Game Dev Intern</strong> – CEMS<br />
+                <em>May 2024 – Jul 2024</em><br />
+                Created 3D maritime simulations using Unity & Twinmotion.
+              </p>
+            </div>
 
-        <!-- EDUCATION SECTION -->
-        <div class="details-container">
-          <img
-            src="./assets/education.png"
-            alt="Education icon"
-            class="icon"
-          />
-          <h3>Education</h3>
-          <p>
-            Bachelor of Technology (B.Tech.) in Information Technology<br />
-            <strong>GMR Institute of Technology (GMRIT)</strong><br />
-            Expected Graduation: <em>2025</em><br />
-            CGPA: 7.5 / 10.0
-          </p>
+            <div class="details-container">
+              <img src="./assets/education.png" alt="Education" class="icon" />
+              <h3>Education</h3>
+              <p>
+                Bachelor of Technology (B.Tech.) in Information Technology<br />
+                <strong>GMR Institute of Technology (GMRIT)</strong><br />
+                Expected Graduation: <em>2025</em><br />
+                CGPA: 7.5 / 10.0
+              </p>
+            </div>
+          </div>
+
+          <div class="text-container">
+            <p>
+              I’m <strong>Hari Aditya</strong>, a results-driven developer passionate about creating intelligent, user-focused digital experiences.
+              Skilled in <strong>web development</strong>, <strong>machine learning</strong>, and <strong>game design</strong>.
+            </p>
+          </div>
         </div>
       </div>
-
-      <!-- ABOUT TEXT SECTION -->
-      <!-- ABOUT TEXT SECTION -->
-<!-- ABOUT TEXT SECTION -->
-<div class="text-container">
-  <p>
-    I’m <strong>Hari Aditya</strong>, a results-driven developer with a passion for building intelligent, user-focused digital experiences. My expertise spans <strong>full-stack web development</strong>, <strong>data analysis</strong>, and <strong>machine learning</strong>, with a strong foundation in creating scalable, efficient, and engaging solutions.<br /><br />
-
-    I have hands-on experience developing <strong>real-time stock prediction models</strong>, <strong>customer behavior classifiers</strong>, and <strong>interactive dashboards</strong> using Python, Flask, SQL, and visualization libraries. I blend data science with intuitive design to deliver solutions that solve real-world problems.<br /><br />
-
-    Beyond data and web, I also bring creativity to the table through <strong>game development and interactive simulations</strong>. From 2D platformers and multiplayer food games to VR-ready maritime experiences and Arduino robotics, I enjoy blending logic with storytelling.<br /><br />
-
-    💼 <strong>Tech Stack:</strong> Python, JavaScript, SQL, HTML/CSS, Flask, TensorFlow, Scikit-Learn, MySQL, Git<br />
-    📊 <strong>Specialties:</strong> Predictive Modeling, Data Visualization, API Integration, Responsive Web Apps, Automation<br />
-    🎮 <strong>Creative Work:</strong> Unity (C#), Blender, Twinmotion, Arduino Robotics, 2D/3D Game Design<br />
-    🌐 <strong>Available for:</strong> Freelance projects, remote jobs, and contract-based collaborations in web, AI, and data
-  </p>
-</div>
-
-
-    </div>
-  </div>
-  <div class="container">
-  <img
-    src="./assets/arrow.png"
-    alt="Arrow icon"
-    class="icon arrow"
-    onclick="location.href='./#experience'"
-  />
-</div>
-
-</section>
+      <div class="container">
+        <img
+          src="./assets/arrow.png"
+          alt="Arrow"
+          class="icon arrow"
+          onclick="location.href='./#experience'"
+        />
+      </div>
+    </section>
 
     <section id="experience">
   <p class="section__text__p1">Explore My</p>
@@ -473,29 +570,58 @@
   </div>
 </section>
 
-<footer class="footer updated-footer">
-  <div class="footer-content">
-    <div class="footer-box">
-      <h3>Hari Aditya's Portfolio</h3>
-      <p>Thank you for visiting! Let’s connect through email or LinkedIn to collaborate and create something great.</p>
-    </div>
-    <div class="footer-box">
-      <h4>Quick Links</h4>
-      <ul>
-        <li>🏠 <a href="#home">Home</a></li>
-        <li>👨‍💼 <a href="#about">About</a></li>
-        <li>🛠️ <a href="#skills">Skills</a></li>
-        <li>💼 <a href="#experience">Experience</a></li>
-      </ul>
-    </div>
-    <div class="footer-box">
-      <h4>Contact Info</h4>
-      <p>📞 +91 9391107311</p>
-      <p>📧 <a href="mailto:hari.aditya003@gmail.com">hari.aditya003@gmail.com</a></p>
-      <p>📍 Vizianagaram, Andhra Pradesh, India</p>
-    </div>
-  </div>
-  <div class="footer-copy">
-    © 2025 Hari Aditya. All Rights Reserved.
-  </div>
-</footer>
+    
+
+    <footer class="footer updated-footer">
+      <div class="footer-content">
+        <div class="footer-box">
+          <h3>Hari Aditya's Portfolio</h3>
+          <p>
+            Thank you for visiting! Let’s connect through email or LinkedIn to collaborate and create something great.
+          </p>
+        </div>
+        <div class="footer-box">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>🏠 <a href="#home">Home</a></li>
+            <li>👨‍💼 <a href="#about">About</a></li>
+            <li>🛠️ <a href="#skills">Skills</a></li>
+            <li>💼 <a href="#experience">Experience</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h4>Contact Info</h4>
+          <p>📞 +91 9391107311</p>
+          <p>
+            📧
+            <a href="mailto:hari.aditya003@gmail.com"
+              >hari.aditya003@gmail.com</a
+            >
+          </p>
+          <p>📍 Vizianagaram, Andhra Pradesh, India</p>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2025 Hari Aditya. All Rights Reserved.
+      </div>
+    </footer>
+
+    <!-- ====== NAVBAR SCRIPT ====== -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("open");
+        });
+      });
+    </script>
+  </body>
+</html>
