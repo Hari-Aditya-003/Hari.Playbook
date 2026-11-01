@@ -22,8 +22,10 @@ Inspect Vercel's deployment result to confirm the live source commit. If your pr
 
 1. Open repository **Settings > Pages**.
 2. Select **GitHub Actions** as the publishing source.
-3. Push a reviewed change to `main`, or run **Deploy static content to Pages** manually from Actions.
+3. Push a reviewed change to `main`, or run **Deploy static content to Pages** manually from Actions with the `main` ref selected. Other refs are skipped by the job guard.
 4. Wait for the workflow to succeed and use its deployment URL.
+
+Action versions are pinned to verified commit SHAs. Update those pins deliberately when upgrading.
 
 The workflow stages `index.html`, the three CSS files, `script.js`, and `assets/` in a dedicated `_site/` directory. It excludes macOS metadata and does not publish Git history, contribution templates, or internal documentation as website files.
 

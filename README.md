@@ -2,7 +2,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/Hari-Aditya-003/Hari.Playbook?style=flat-square)](https://github.com/Hari-Aditya-003/Hari.Playbook/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Hari-Aditya-003/Hari.Playbook?style=flat-square)](https://github.com/Hari-Aditya-003/Hari.Playbook/forks)
-[![Default branch](https://img.shields.io/badge/branch-main-2563eb?style=flat-square)](https://github.com/Hari-Aditya-003/Hari.Playbook/branches)
+[![Default branch](https://img.shields.io/badge/branch-main-2563eb?style=flat-square)](https://github.com/Hari-Aditya-003/Hari.Playbook/tree/main)
 
 Hari Aditya's developer portfolio, showcasing full-stack web development, game development, machine learning, and robotics projects.
 
@@ -54,7 +54,7 @@ CONTRIBUTING.md               Contribution workflow
 
 1. Update profile, experience, project links, and contact information in `index.html`.
 2. Add optimized images in `assets/` and update their relative paths and alt text.
-3. Replace `assets/resume-example.pdf` with the intended resume, or update the download link.
+3. Add or replace `assets/resume-example.pdf` with the intended resume, or update the download link.
 4. Check desktop and mobile layouts after editing either stylesheet.
 5. Verify contact-form script loading and EmailJS configuration before accepting submissions; see [deployment checks](docs/DEPLOYMENT.md#contact-form-readiness).
 
